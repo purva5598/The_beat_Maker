@@ -1,9 +1,18 @@
 alert("HI! Let's have some fun.");
-
 for(var i=0;i<document.querySelectorAll(".drum").length;i++){
   document.querySelectorAll(".drum")[i].addEventListener("click",function(){
   var buttonInnerHTML= this.innerHTML;
-   switch(buttonInnerHTML){
+  makesound(buttonInnerHTML);
+
+
+ });
+}
+ document.addEventListener("keypress", function(event){
+
+makesound(event.key);
+});
+ function makesound(key){
+   switch(key){
      case "a":
      var so1=new Audio("sounds/s1.wav");
      so1.play();
@@ -65,8 +74,8 @@ for(var i=0;i<document.querySelectorAll(".drum").length;i++){
      break;
 
 
-     default: console.log(bihtml);
+     default: console.log(key);
 
    }
- });
-}
+ }
+
